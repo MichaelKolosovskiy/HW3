@@ -41,8 +41,9 @@ public class CarDoor {
 	
 	@Override
 	public String toString() {
-		return "Is the door open ? "+ this.carDoor
+		return 
+				"Is the door open ? "+ this.carDoor
 				+"\nIs the window open ? "+this.carWindow;
 	}
-	
+		
 }
