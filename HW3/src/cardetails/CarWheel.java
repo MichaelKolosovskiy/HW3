@@ -5,15 +5,19 @@ public class CarWheel {
 	private double amountOfTheWheel;
 	
 	public CarWheel() {
-		this.amountOfTheWheel = 1;
+		this.amountOfTheWheel = Math.random();
 	}
-	 
+	
 	public CarWheel(double amountOfTheWheel) {
 		this.amountOfTheWheel = amountOfTheWheel;
 	}
 
-	public void tireWear(double persent) {
-		this.amountOfTheWheel = amountOfTheWheel - persent;
+	public void tireWear(int percent) {
+		this.amountOfTheWheel = amountOfTheWheel - (0.01 * percent);
+	}
+	
+	public double getStateOfTheWheel() {
+		return this.amountOfTheWheel;
 	}
 	
 	public void changeCarWheelOrNot() {
