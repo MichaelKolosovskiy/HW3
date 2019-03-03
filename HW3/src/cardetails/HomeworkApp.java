@@ -1,5 +1,7 @@
 package cardetails;
 
+import java.time.LocalDate;
+
 public class HomeworkApp {
  
 	public static void main(String[] args) {
@@ -10,18 +12,19 @@ public class HomeworkApp {
 		System.out.println();
 		
 		CarWheel  w = new CarWheel();
-		w.tireWear(0.5);
+		w.tireWear(1);
 		w.changeCarWheelOrNot();
 		System.out.println();
 		 
-		Car car1 = new Car("Fuel",300,100,4,2,123,2019);
+		Car car1 = new Car("Fuel",300,100, 4, -234,123, LocalDate.now());
+		System.out.println(car1.maxCurrentSpeed());
+		car1.changeCurrentSpeed(43);
 		System.out.println(car1.toString());
 		System.out.println();
-		car1.addOnePassenger();
-		car1.onePassengerOff();
-		car1.changeCurrentSpeed(130);
-		car1.getOffAllPassengers();
+		car1.changeCurrentSpeed(76);
+		System.out.println(car1.maxCurrentSpeed());
 		System.out.println(car1.toString());
+
 	}
 
 }
