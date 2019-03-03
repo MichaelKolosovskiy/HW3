@@ -1,49 +1,30 @@
 package cardetails;
 
-public class CarDoor {
+public class CarWheel {
 
-    private boolean carDoor;
-    private boolean carWindow;
+    private double amountOfTheWheel;
 
-    public CarDoor() {
-        this.carDoor = false;
-        this.carWindow = false;
+    public CarWheel() {
+        this.amountOfTheWheel = Math.random();
     }
 
-    public CarDoor(boolean carDoor, boolean carWindow) {
-        this.carDoor = carDoor;
-        this.carWindow = carWindow;
+    public CarWheel(double amountOfTheWheel) {
+        this.amountOfTheWheel = amountOfTheWheel;
     }
 
-    public void openDoor() {
-        this.carDoor = true;
+    public void tireWear(int percent) {
+        this.amountOfTheWheel = amountOfTheWheel - (0.01 * percent);
     }
 
-    public void closeDoor() {
-        this.carDoor = false;
+    public double getStateOfTheWheel() {
+        return this.amountOfTheWheel;
     }
 
-    public void openWindow() {
-        this.carWindow = true;
+    public void changeCarWheelOrNot() {
+        if (this.amountOfTheWheel >= 0 && this.amountOfTheWheel <= 0.30) {
+            System.out.println("You need to change your wheels");
+        } else {
+            System.out.println("You don't need to change your wheels");
+        }
     }
-
-    public void closeWindow() {
-        this.carWindow = false;
-    }
-
-    public boolean ifDoorIsClosedOrOpened() {
-        return (this.carDoor == false) ? true : false;
-    }
-
-    public boolean ifWindowIsClosedOrOpened() {
-        return (this.carWindow == false) ? true : false;
-    }
-
-    @Override
-    public String toString() {
-        return
-                "Is the door open ? " + this.carDoor
-                        + "\nIs the window open ? " + this.carWindow;
-    }
-
 }
