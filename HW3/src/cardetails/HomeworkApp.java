@@ -16,16 +16,18 @@ public class HomeworkApp {
         w.changeCarWheelOrNot();
         System.out.println();
 
-        Car car1 = new Car("Fuel", 300, 100, 4, -234, 123, LocalDate.now());
-        System.out.println(car1.maxCurrentSpeed());
+        Car car1 = new Car("Fuel", 300, 100,  4, 0, 123, LocalDate.now());
+        car1.maxCurrentSpeed();
         car1.changeCurrentSpeed(43);
         System.out.println(car1.toString());
         System.out.println();
+
+        car1.maxCurrentSpeed();
+        car1.addOnePassenger();
+        car1.onePassengerOff();
         car1.changeCurrentSpeed(76);
-        System.out.println(car1.maxCurrentSpeed());
         System.out.println(car1.toString());
 
     }
 
 }
-
