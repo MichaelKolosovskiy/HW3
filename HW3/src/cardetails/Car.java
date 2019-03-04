@@ -34,6 +34,9 @@ public class Car {
         if (this.passengersIn >= this.passengers) {
             this.passengersIn = this.passengers;
         }
+        if (this.passengers <= 0){
+            this.passengers = 1;
+        }
 
         addDoors(4);
         addWheels(4);
@@ -53,18 +56,14 @@ public class Car {
     }
 
     public int maxCurrentSpeed() {
-        if (this.passengersIn <= 0) {
-            return 0;
-        } else {
-            for (int i = 0; i < carWheels.size(); i++) {
-                double worseWheel = 1;
-                if (worseWheel >= carWheels.get(i).getStateOfTheWheel()) {
-                    worseWheel = carWheels.get(i).getStateOfTheWheel();
-                }
-                this.currentMaxSpeed = (int) (maxSpeed * worseWheel);
+        for (int i = 0; i < carWheels.size(); i++) {
+            double worseWheel = 1;
+            if (worseWheel >= carWheels.get(i).getStateOfTheWheel()) {
+                worseWheel = carWheels.get(i).getStateOfTheWheel();
             }
-            return this.currentMaxSpeed;
+            this.currentMaxSpeed = (int) (maxSpeed * worseWheel);
         }
+        return this.currentMaxSpeed;
     }
 
     public void getOffAllPassengers() {
